@@ -1,6 +1,6 @@
-// components/Hero.tsx
 import React from 'react';
 import Navbar from './Navbar';
+import Image from 'next/image'; // Importing Next.js Image component
 
 const Hero = () => {
   return (
@@ -16,9 +16,9 @@ const Hero = () => {
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 sm:px-8 lg:px-16 py-20">
         
         {/* Left Section: Text */}
-        <div className="text-left lg:w-1/2 space-y-4" >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4" >
-           Hi, I'm Hurya
+        <div className="text-left lg:w-1/2 space-y-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Hi, I'm Hurya
           </h1>
           <p className="text-lg sm:text-xl mb-6">
             I'm a passionate web developer specializing in modern web technologies like React, Next.js, and TypeScript.
@@ -34,10 +34,14 @@ const Hero = () => {
         {/* Right Section: Profile Image */}
         <div className="mt-10 lg:mt-0 lg:w-1/3 flex justify-center">
           <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-blue-600 shadow-lg">
-            <img
+            {/* Using Next.js Image component for optimization */}
+            <Image
               src="/profile-image.jpg"
               alt="Hurya's profile"
               className="w-full h-full object-cover"
+              width={224} // Adjusted width for the image
+              height={224} // Adjusted height for the image
+              priority // Optional, prioritize loading this image
             />
           </div>
         </div>
